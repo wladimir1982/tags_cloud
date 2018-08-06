@@ -1,0 +1,49 @@
+.tag {
+  display: inline-block;
+  margin-left: 10px;
+}
+a {
+  font-weight: 900;
+}
+a:hover {
+  color: #3d739c !important;
+  text-decoration: underline;
+  transition: all .3s;
+}
+.wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.title {
+  width: 70%;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+}
+input {
+  border-bottom: 2px solid blue !important;
+}
+.filter {
+  width: 30%;
+}
+@media only screen and (max-width: 820px) {
+  a {
+    font-size: 20px !important;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .title {
+    width: 100%;
+  }
+  .filter {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .title {
+    width: 100%;
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row" *ngIf="!isLoaded">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="isLoaded">
+    <div class="row">
+      <div class="wrap">
+        <h2 class="title">Tags Cloud</h2>
+        <div class="filter">
+          <input type="text" name="tag" placeholder="Filter by tags" [(ngModel)]="filter.label">
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="tags">
+      <ul class="cld">
+        <li
+          class="tag"
+          *ngFor="let tag of tags | tagFilter: filter; let idx = index"
+          (mouseover)="hover=true"
+          (mouseleave)="hover=false"
+        >
+          <a
+            [ngStyle]="{fontSize: tag.sentimentScore / 4 + 'px',
+            color: (idx + 1) % 2 === 0 ? 'brown' : 'blue',
+            'line-height': (tag.label === 'Mixes') ? 1.2 : 1,
+            'display': (tag.label === 'Mixes') ? 'block' : 'inherit'}"
+            [routerLink]="['/tag', tag.id]"
+          >
+            {{tag.label}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

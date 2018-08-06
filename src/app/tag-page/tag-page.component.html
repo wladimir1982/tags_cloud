@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row" *ngIf="!isLoaded">
+    <app-loader></app-loader>
+  </div>
+  <div class="row" *ngIf="isLoaded">
+    <div class="row">
+      Label: <span>{{tag.label}}</span>
+    </div>
+    <div class="row">
+      Total Mentions: <span>{{totalMentions}}</span>
+    </div>
+    <div class="row" *ngIf="tag.sentiment.positive">
+      Positive Mentions: <span>{{tag.sentiment.positive}}</span>
+    </div>
+    <div class="row" *ngIf="tag.sentiment.neutral">
+      Neutral Mentions: <span>{{tag.sentiment.neutral}}</span>
+    </div>
+    <div class="row" *ngIf="tag.sentiment.negative">
+      Negative Mentions: <span>{{tag.sentiment.negative}}</span>
+    </div>
+    <div class="row">
+      List of page types: <span>{{items}}</span>
+    </div>
+  </div>
+  <button class="btn" (click)="goBack()">go back</button>
+</div>
